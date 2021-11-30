@@ -29,9 +29,9 @@ public class CalculatorServlet extends HttpServlet {
 
     private String extractExpressionFromPath(HttpServletRequest req) throws InvalidHttpRequestException {
         final var pathVariables = req.getPathInfo().split("/");
-        if (pathVariables[1] != null && pathVariables[1].length() > 0) {
+        if (pathVariables.length > 0 && pathVariables[1] != null && pathVariables[1].length() > 0) {
             return pathVariables[1];
         }
-        throw new InvalidHttpRequestException("Expression not available");
+        throw new InvalidHttpRequestException("Invalid expression");
     }
 }
