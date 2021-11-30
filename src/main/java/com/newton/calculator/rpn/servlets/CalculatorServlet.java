@@ -12,5 +12,6 @@ public class CalculatorServlet extends HttpServlet {
         resp.setContentType("text/html");
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.getWriter().println("greeting");
+
     }
 }
