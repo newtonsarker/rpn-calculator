@@ -15,7 +15,7 @@
   * The application will run on port `8080`
 
 
-## Docker
+## Dockerfile
 ```shell
 # add the current user
 sudo usermod -aG docker $USER
@@ -23,6 +23,12 @@ newgrp docker
 
 # build the image
 docker build --tag rpn-calculator .
+
+# list docker images
+docker images
+
+# remove image
+docker rmi <image_id>
 
 # run the image
 docker run rpn-calculator
@@ -33,4 +39,23 @@ docker ps -a
 
 # stop the running container
 docker stop <container_id or image_name>
+
+# remove container
+docker rm <container_id or image_name>
+
+# tag the docker image with dockerhub
+docker tag rpn-calculator newtonsarker/rpn-calculator
+
+# push image
+docker login -u "username" -p "password" docker.io
+docker push newtonsarker/rpn-calculator
+```
+
+## Docker Compose
+```shell
+# run containers from uploaded image
+docker-compose up -d
+
+# stop container
+docker-compose stop <image_name>
 ```
