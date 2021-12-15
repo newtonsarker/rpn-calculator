@@ -1,7 +1,7 @@
 # Reverse Polish Notation Calculator
 * The calculator uses command pattern to extend or control the features. ServiceSelector will cater the required operations, which can be extended by CalculatorService interface.
 * Jetty embedded server is used for the web functionalities. CalculatorServlet is mapped to path `/calculate/*`, defined in CalculatorServletContext. RPN expressions can be passes as a path parameter. For example -
-  * `http://localhost:8083/calculate/1 3 + 5 6 MIN 8 *`
+  * `http://localhost:8080/calculate/1 3 + 5 6 MIN 8 *`
   * Of course the expression has to be URL encoded
 
 ## Assumptions
