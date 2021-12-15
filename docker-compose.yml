@@ -1,0 +1,7 @@
+version: "2.2"
+services:
+  calc_servive:
+    image: newtonsarker/rpn-calculator
+    container_name: rpn-calculator
+    ports:
+      - "8080:8080"
