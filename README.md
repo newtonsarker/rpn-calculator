@@ -13,3 +13,24 @@
   * Test server uses port `8083` to perform the tests
 * Run Application: `./mvnw compile exec:java -Dexec.mainClass="com.newton.calculator.rpn.Application"`
   * The application will run on port `8080`
+
+
+## Docker
+```shell
+# add the current user
+sudo usermod -aG docker $USER
+newgrp docker
+
+# build the image
+docker build --tag rpn-calculator .
+
+# run the image
+docker run rpn-calculator
+docker run --name rpn-calculator -p 8080:8080 -d rpn-calculator 
+
+# list all docker containers
+docker ps -a
+
+# stop the running container
+docker stop <container_id or image_name>
+```
